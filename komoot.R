@@ -32,8 +32,9 @@ df$dist <- apply(df, 1, function(x) {
   })
 df$dist[1] <- 0
 
-sum(df$dist) / 1000
+dist <- sum(df$dist) / 1000
 sum(df[df$elevationdiff > 0, "elevationdiff"], na.rm = TRUE)
 sum(df[df$elevationdiff < 0, "elevationdiff"], na.rm = TRUE)
-difftime(df$time[nrow(df)] - df$time[1])
+time <- as.numeric(difftime(df$time[nrow(df)], df$time[1], units = "hours"))
+speed <- dist / time
 
