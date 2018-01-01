@@ -32,6 +32,8 @@ df$dist <- apply(df, 1, function(x) {
   })
 df$dist[1] <- 0
 
+max(df$elevation)
+min(df$elevation)
 dist <- sum(df$dist) / 1000
 sum(df[df$elevationdiff > 0, "elevationdiff"], na.rm = TRUE)
 sum(df[df$elevationdiff < 0, "elevationdiff"], na.rm = TRUE)
